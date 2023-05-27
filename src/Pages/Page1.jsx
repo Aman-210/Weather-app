@@ -7,15 +7,16 @@ import Information from '../components/Information';
 import { getWeather}  from '../service/api';
 
 const Section = styled(Box)(({theme})=>({
-    background: `url('https://images.pexels.com/photos/6033985/pexels-photo-6033985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
+   background: `url('https://images.pexels.com/photos/6033985/pexels-photo-6033985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+   backgroundSize: 'cover',
+   backgroundRepeat: 'no-repeat',
+   backgroundPosition: 'center',
     width:'100%',
     height:'100vh',
     [theme.breakpoints.down('sm')]:{
-       
-        
+      background: `url('https://images.pexels.com/photos/6033985/pexels-photo-6033985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` ,
+      width:'100%',
+     height:'100vh',
        
     }
    
@@ -26,10 +27,10 @@ const Select = styled(Box)(({theme})=>({
   [theme.breakpoints.down('sm')]:{
     gap:'1vh',
     display:'block',
-    width:'400px',
+    width:'214px',
     fontSize:'1px',
     marginTop:'3vh',
-   marginLeft:'0vh'
+   marginLeft:'-1vh'
     
    
 }
@@ -48,7 +49,7 @@ fontWeight:'bold',
 color:'rgba(0, 0, 0, 0.5)',
 [theme.breakpoints.down('sm')]:{
    display:'flex',
-   fontSize:'40px',
+   fontSize:'49px',
 
   
    
@@ -76,15 +77,16 @@ background:' black',
  background:'#e67e22',
  color:'#fff'
 },
-height:'53px',
+height:'43px',
 marginTop:'1vh',
 [theme.breakpoints.down('sm')]:{
-    marginTop:'1vh',
+   
     display:'flex',
- 
+   justifyContent:'center',
+   alignItems:'center',
     height:'40px',
     fontSize:'10px',
-   
+    margin: '2vh auto'
    
 }
 }))
@@ -95,7 +97,17 @@ const InputLabels = styled(InputLabel)(({theme})=>({
   
     
     }))
-
+    const Error = styled(Typography)(({theme})=>({
+   
+      color: 'red',
+      margin: 50,
+      padding: 20,
+      [theme.breakpoints.down('sm')]:{
+      
+         padding:'0',
+         
+      }
+  }))
 const Page1 = ()=>{
       const[result,setresult] = useState({})
       const[data,setData] = useState({City:'' , Country:''})
@@ -105,8 +117,12 @@ const Page1 = ()=>{
     console.log(data)
     }
     const getWeatherInfo= async()=>{
-     let response= await getWeather(data.City , data.Country  )
-     setresult(response)
+      
+       let response= await getWeather(data.City , data.Country  );
+       setresult(response)
+        
+       
+
     }
     return(
       <Section >
