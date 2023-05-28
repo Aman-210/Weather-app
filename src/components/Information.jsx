@@ -4,25 +4,44 @@ import { LocationOn, SettingsBrightness, Opacity, Brightness5, Brightness6, Deha
 
 const Section = styled(Box)(({theme})=>({
    
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('xs')]:{
     
       marginLeft:'0vh'
      
   }
 }))
 const Row = styled(Typography)(({theme})=>({
-    padding: 10,
-    fontSize: 20,
-    letterSpacing: 2,
-    '& > svg': {
-        marginRight: 10,
-         },
-    [theme.breakpoints.down('sm')]:{
-     display:'flex',
-     marginTop:'3vh',
-     padding:'0',
-
-    }
+    [theme.breakpoints.up('xs')]:{
+        display:'flex',
+        marginTop:'3vh',
+        padding:'0',
+        gap:'3vh',
+        '& > svg': {
+           marginRight: 0,
+            },
+       },
+   
+        
+   
+    [theme.breakpoints.up('md')]:{
+        padding: 10,
+        fontSize: 20,
+        letterSpacing: 2,
+       
+        '& > svg': {
+            marginRight: 10,
+             },
+            },
+            [theme.breakpoints.up('sm')]:{
+                marginLeft:'-30vh',
+               gap:'5vh',
+               
+                fontSize: 20,
+                letterSpacing: 2,
+                          '& > svg': {
+                     marginRight: 10
+                      },
+                 },
 }))
 
 const Error = styled(Typography)(({theme})=>({
@@ -30,11 +49,14 @@ const Error = styled(Typography)(({theme})=>({
     color: 'red',
     margin: 50,
     padding: 20,
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.up('sm')]:{
+    marginLeft:'0vh'
     
-       padding:'0',
-       
-    }
+    },
+    [theme.breakpoints.up('xs')]:{
+    
+      
+    },
 }))
 
 const Information = ({ result }) => {

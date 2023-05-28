@@ -13,7 +13,7 @@ const Section = styled(Box)(({theme})=>({
    backgroundPosition: 'center',
     width:'100%',
     height:'100vh',
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('xs')]:{
       background: `url('https://images.pexels.com/photos/6033985/pexels-photo-6033985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` ,
       width:'100%',
      height:'100vh',
@@ -57,16 +57,23 @@ color:'rgba(0, 0, 0, 0.5)',
 
 }))
 const Section2 = styled(Box)(({theme})=>({
-marginTop:'10vh',
-marginLeft:'40rem',
-[theme.breakpoints.down('sm')]:{
+ 
+
+[theme.breakpoints.up('xs')]:{
    marginLeft:'-8vh',
 
    marginTop:'-.3vh',
    height:'70vh'
     
- }
-
+ },
+ [theme.breakpoints.up('sm')]:{
+   
+  marginLeft:'40rem',
+ },
+ [theme.breakpoints.up('md')]:{
+  marginTop:'10vh',
+ marginLeft:'40rem',
+   },
 }))
 const Get_Detail = styled(Button)(({theme})=>({
 border:'.1px solid rgba(0, 0, 0, 0.5) ',
@@ -97,17 +104,17 @@ const InputLabels = styled(InputLabel)(({theme})=>({
   
     
     }))
-    const Error = styled(Typography)(({theme})=>({
+  //   const Error = styled(Typography)(({theme})=>({
    
-      color: 'red',
-      margin: 50,
-      padding: 20,
-      [theme.breakpoints.down('sm')]:{
+  //     color: 'red',
+  //     margin: 50,
+  //     padding: 20,
+  //     [theme.breakpoints.down('sm')]:{
       
-         padding:'0',
+  //        padding:'0',
          
-      }
-  }))
+  //     }
+  // }))
 const Page1 = ()=>{
       const[result,setresult] = useState({})
       const[data,setData] = useState({City:'' , Country:''})
